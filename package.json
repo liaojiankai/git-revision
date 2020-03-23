@@ -1,10 +1,10 @@
 {
   "name": "git-revision",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "v": "node ./build/version.js",
+    "v": "yarn version && node ./build/version.js",
     "x": "npm --no-git-tag-version version major",
     "y": "npm --no-git-tag-version version minor",
     "z": "npm --no-git-tag-version version patch",

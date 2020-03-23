@@ -1,9 +1,13 @@
 {
   "name": "git-revision",
-  "version": "1.0.0",
+  "version": "2.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "tag": "node ./build/version.js",
+    "x": "npm --no-git-tag-version version major",
+    "y": "npm --no-git-tag-version version minor",
+    "z": "npm --no-git-tag-version version patch",
     "build": "node build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,16 +23,18 @@
     "@babel/runtime": "^7.0.0"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
+    "babel-preset-latest": "^6.24.1",
     "chai": "^4.2.0",
     "del": "^5.1.0",
     "rollup": "^2.1.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-license": "^0.13.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-uglify": "^6.0.4"
   }

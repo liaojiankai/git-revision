@@ -7,6 +7,7 @@ const babel = require('rollup-plugin-babel');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const uglify = require('rollup-plugin-uglify').uglify;
+const license = require('rollup-plugin-license')
 const pkg = require('../package.json');
 
 let promise = Promise.resolve();
@@ -20,18 +21,27 @@ promise = promise.then(() => del(['dist/*']));
     input: 'src/index.js',
     external: Object.keys(pkg.dependencies),
     plugins: [
-      resolve({
-        // 将自定义选项传递给解析插件
-        customResolveOptions: {
-          moduleDirectory: 'node_modules'
-        }
+      resolve(),
+      license({
+        banner: `
+          Bundle of <%= pkg.name %>
+          Generated: <%= moment().format('YYYY-MM-DD') %>
+          Version: <%= pkg.version %>
+          License: <%= pkg.license %>
+          Author: <%= pkg.author %>
+        `
       }),
       babel(Object.assign(pkg.babel, {
         babelrc: false,
         exclude: 'node_modules/**',
         externalHelpers: false,
         runtimeHelpers: true,
-        presets: pkg.babel.presets.map(x => (x === 'latest' ? ['latest', { es2015: { modules: false } }] : x)),
+        presets: pkg.babel.presets
+          .map(x => {
+            console.log('x: >>>> ', x);
+            return (x === 'latest' ? ['latest', { es2015: { modules: false } }] : x)}
+          )
+          // .concat(['latest', { es2015: { modules: false } }] ),
       })),
       commonjs(),
       // uglify()

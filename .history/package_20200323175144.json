@@ -1,13 +1,9 @@
 {
   "name": "git-revision",
-  "version": "2.1.3",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tag": "node ./build/version.js",
-    "x": "npm --no-git-tag-version version major",
-    "y": "npm --no-git-tag-version version minor",
-    "z": "npm --no-git-tag-version version patch",
     "build": "node build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,5 +1,9 @@
 const runGitCommand = require('./util')
 
+const COMMITHASH_COMMAND = 'rev-parse HEAD'
+const VERSION_COMMAND = 'describe --always'
+const BRANCH_COMMAND = 'rev-parse --abbrev-ref HEAD'
+
 class GitRevision {
   constructor(options) {
     this.gitWorkTree = options.gitWorkTree || undefined

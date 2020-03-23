@@ -20,18 +20,14 @@ promise = promise.then(() => del(['dist/*']));
     input: 'src/index.js',
     external: Object.keys(pkg.dependencies),
     plugins: [
-      resolve({
-        // 将自定义选项传递给解析插件
-        customResolveOptions: {
-          moduleDirectory: 'node_modules'
-        }
-      }),
+      resolve(),
       babel(Object.assign(pkg.babel, {
         babelrc: false,
         exclude: 'node_modules/**',
         externalHelpers: false,
         runtimeHelpers: true,
-        presets: pkg.babel.presets.map(x => (x === 'latest' ? ['latest', { es2015: { modules: false } }] : x)),
+        presets: pkg.babel.presets
+          .map(x => (x === 'latest' ? ['latest', { es2015: { modules: false } }] : x)),
       })),
       commonjs(),
       // uglify()

@@ -28,6 +28,7 @@
     "commitlint-config-cz": "^0.13.1",
     "cz-customizable": "^6.2.0",
     "del": "^5.1.0",
+    "eslint-config-prettier": "^6.10.1",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.9",
     "rollup": "^2.1.0",
@@ -43,8 +44,16 @@
   },
   "config": {
     "commitizen": {
+      "pre-commit": "lint-staged",
       "path": "node_modules/cz-customizable"
     }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   },
   "husky": {
     "hooks": {

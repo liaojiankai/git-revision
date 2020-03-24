@@ -2,7 +2,7 @@
   "name": "git-revision",
   "version": "0.0.4",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "v": "yarn version && node ./build/version.js",
     "x": "npm --no-git-tag-version version major",
@@ -48,15 +48,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -e $GIT_PARAMS"
     }
-  },
-  "lint-staged": {
-    "src/**/*.js": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ]
   }
 }

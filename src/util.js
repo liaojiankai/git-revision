@@ -1,6 +1,6 @@
-var exec = require('child_process').exec
-var execSync = require('child_process').execSync
-var path = require('path')
+
+import { exec, execSync } from 'child_process'
+import path from 'path'
 
 function removeEmptyLines(string) {
   return string.replace(/[\s\r\n]+$/, '')

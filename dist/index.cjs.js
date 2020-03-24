@@ -1,9 +1,14 @@
 /*!
- * git-revision.js v0.0.1
+ * git-revision.js v0.0.4
  * (c) 2018-2020 ernan <ernan@global.com>
  * Released under the MIT License.
  */
 'use strict';
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var child_process = require('child_process');
+var path = _interopDefault(require('path'));
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -31,12 +36,6 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 var createClass = _createClass;
 
-var exec = require('child_process').exec;
-
-var execSync = require('child_process').execSync;
-
-var path = require('path');
-
 function removeEmptyLines(string) {
   return string.replace(/[\s\r\n]+$/, '');
 }
@@ -45,7 +44,7 @@ function runGitCommand(gitWorkTree, command, callback) {
   var gitCommand = gitWorkTree ? ['git', '--git-dir=' + path.join(gitWorkTree, '.git'), '--work-tree=' + gitWorkTree, command].join(' ') : ['git', command].join(' ');
 
   if (callback) {
-    exec(gitCommand, function (err, stdout) {
+    child_process.exec(gitCommand, function (err, stdout) {
       if (err) {
         return callback(err);
       }
@@ -53,7 +52,7 @@ function runGitCommand(gitWorkTree, command, callback) {
       callback(null, removeEmptyLines(stdout));
     });
   } else {
-    return removeEmptyLines('' + execSync(gitCommand));
+    return removeEmptyLines('' + child_process.execSync(gitCommand));
   }
 }
 

@@ -1,8 +1,11 @@
 /*!
- * git-revision.js v0.0.1
+ * git-revision.js v0.0.4
  * (c) 2018-2020 ernan <ernan@global.com>
  * Released under the MIT License.
  */
+import { exec, execSync } from 'child_process';
+import path from 'path';
+
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -28,12 +31,6 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 var createClass = _createClass;
-
-var exec = require('child_process').exec;
-
-var execSync = require('child_process').execSync;
-
-var path = require('path');
 
 function removeEmptyLines(string) {
   return string.replace(/[\s\r\n]+$/, '');

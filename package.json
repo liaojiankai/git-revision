@@ -50,6 +50,7 @@
   },
   "lint-staged": {
     "src/**/*.js": [
+      "echo 'xxx'",
       "prettier --write",
       "eslint --fix",
       "git add"

@@ -3,40 +3,40 @@
 module.exports = {
   types: [
     {
-      value: 'WIP',
+      value: '💪WIP',
       name: '💪  WIP:      Work in progress'
     },
     {
-      value: 'feat',
-      name: '✨  feat:     A new feature'
+      value: '✨feat',
+      name: '✨  feat:     新功能'
     },
     {
-      value: 'fix',
-      name: '🐞  fix:      A bug fix'
+      value: '🐞fix',
+      name: '🐞  fix:       错误修复'
     },
     {
-      value: 'refactor',
-      name: '🛠  refactor: A code change that neither fixes a bug nor adds a feature'
+      value: '🛠refactor',
+      name: '🛠  refactor:  既不是修复错误也未添加功能 的代码更改'
     },
     {
-      value: 'docs',
-      name: '📚  docs:     Documentation only changes'
+      value: '📚docs',
+      name: '📚  docs:      仅文档更改'
     },
     {
-      value: 'test',
-      name: '🏁  test:     Add missing tests or correcting existing tests'
+      value: '🏁test',
+      name: '🏁  test:      添加缺失的测试或更正现有的测试'
     },
     {
-      value: 'chore',
-      name: '🗯  chore:    Changes that don\'t modify src or test files. Such as updating build tasks, package manager'
+      value: '🗯chore',
+      name: '🗯  chore:     不会修改src或测试文件的更改。 例如更新构建任务，程序包管理器'
     },
     {
       value: 'style',
-      name: '💅  style:    Code Style, Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)'
+      name: '💅  style:     代码样式，不影响代码含义的更改（空白，格式，缺少分号等）'
     },
     {
       value: 'revert',
-      name: '⏪  revert:   Revert to a commit'
+      name: '⏪  revert:     回滚'
     }
   ],
 

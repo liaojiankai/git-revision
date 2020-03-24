@@ -11,7 +11,8 @@ function execSync(cmd) {
 const branch = execSync('git rev-parse --abbrev-ref HEAD')
 
 const exec = require('child_process').exec;
-let cmdStr = `git add . && git commit -m "v${version}" && git push origin ${branch} && git tag -a "v${version}" -m "${version}" && git push origin --tags`;
+const cmdStr = `git add . && git commit -m "v${version}" && git push origin ${branch} && git push origin --tags`;
+// const cmdStr = `git add . && git commit -m "v${version}" && git push origin ${branch} && git tag -a "v${version}" -m "${version}" && git push origin --tags`;
 
 execSync(cmdStr)
 // exec(cmdStr, function (err, stdout, stderr) {

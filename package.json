@@ -1,6 +1,6 @@
 {
   "name": "git-revision",
-  "version": "2.1.7",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,17 +11,7 @@
     "build": "node build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      "@babel/plugin-transform-runtime"
-    ]
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.0.0"
-  },
+  "dependencies": {},
   "author": "ernan <ernan@global.com>",
   "license": "MIT",
   "devDependencies": {
@@ -34,8 +24,11 @@
     "rollup": "^2.1.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-filesize": "^6.2.1",
     "rollup-plugin-license": "^0.13.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-uglify": "^6.0.4"
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "uglify-es": "^3.3.9"
   }
 }

@@ -6,7 +6,7 @@ function removeEmptyLines(string) {
   return string.replace(/[\s\r\n]+$/, '')
 }
 
-module.exports = function (gitWorkTree, command, callback) {
+export function runGitCommand (gitWorkTree, command, callback) {
   var gitCommand = gitWorkTree
     ? [
       'git',

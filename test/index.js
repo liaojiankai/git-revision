@@ -7,10 +7,7 @@ const {
   BRANCH
 } = gitRevision
 
-  console.log(COMMITHASH, VERSION, BRANCH);
-
-
-
+console.log(COMMITHASH, VERSION, BRANCH);
 
 console.log('COMMITHASH: ', gitRevision)
 console.log(
